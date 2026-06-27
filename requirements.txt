@@ -1,0 +1,4 @@
+opencv-python>=4.9
+mediapipe>=0.10
+requests>=2.31
+edge-tts>=7.2
