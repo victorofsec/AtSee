@@ -4,6 +4,7 @@ Petite app Python qui utilise OpenCV + MediaPipe pour detecter une main en webca
 Quand le bout de l'index touche le bout du majeur pendant quelques frames, l'image
 est gelee et l'app demande:
 
+![Hand tracking](IMG_1233.png)
 ```text
 Voulez-vous envoyer ?
 ```
@@ -13,7 +14,7 @@ Appuie sur `O`, `Y` ou `Entree` pour envoyer l'image a GitHub Models. Appuie sur
 fenetre, dans le terminal, puis lue a voix haute avec une voix neuronale Edge TTS.
 Pendant la lecture, appuie sur `P` pour mettre en pause, puis encore `P` pour
 reprendre.
-
+![Hand tracking](IMG_1234.png)
 ## Installation
 
 ```bash
