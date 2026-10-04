@@ -1,5 +1,5 @@
 # Atsee hand capture
-
+## ⚠️ WARNING: THIS VERSION MAY NOT WORK WITH THE LATEST RASPBERRY PI UPDATES ⚠️
 Petite app Python qui utilise OpenCV + MediaPipe pour detecter une main en webcam.
 Quand le bout de l'index touche le bout du majeur pendant quelques frames, l'image
 est gelee et l'app demande:
