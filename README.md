@@ -1,20 +1,25 @@
-# Atsee hand capture
+# Atsee Hand Capture
+
 ## ⚠️ WARNING: THIS VERSION MAY NOT WORK WITH THE LATEST RASPBERRY PI UPDATES ⚠️
-Petite app Python qui utilise OpenCV + MediaPipe pour detecter une main en webcam.
-Quand le bout de l'index touche le bout du majeur pendant quelques frames, l'image
-est gelee et l'app demande:
+
+A small Python app that uses OpenCV + MediaPipe to detect a hand through a webcam.
+
+When the tip of the index finger touches the tip of the middle finger for a few frames, the image is frozen and the app asks:
 
 ![Hand tracking](IMG_1233.png)
+
 ```text
-Voulez-vous envoyer ?
+Would you like to send it?
 ```
 
-Appuie sur `O`, `Y` ou `Entree` pour envoyer l'image a GitHub Models. Appuie sur
-`N` ou `Echap` pour revenir a la camera. La reponse IA est affichee dans la
-fenetre, dans le terminal, puis lue a voix haute avec une voix neuronale Edge TTS.
-Pendant la lecture, appuie sur `P` pour mettre en pause, puis encore `P` pour
-reprendre.
+Press `O`, `Y`, or `Enter` to send the image to GitHub Models. Press `N` or `Escape` to return to the camera.
+
+The AI response is displayed in the window and in the terminal, then read aloud using an Edge TTS neural voice.
+
+While the response is being read, press `P` to pause and press `P` again to resume.
+
 ![Hand tracking](IMG_1234.png)
+
 ## Installation
 
 ```bash
@@ -24,18 +29,18 @@ pip install -r requirements.txt
 python main.py
 ```
 
-La lecture vocale utilise `ffplay` ou `mpg123` si disponible sur la machine.
+Voice playback uses `ffplay` or `mpg123` if available on the system.
 
 ## Configuration
 
-Le fichier `.env` peut contenir soit une cle brute seule, soit des variables:
+The `.env` file can contain either a single raw token or the following variables:
 
 ```text
 GITHUB_MODELS_TOKEN=github_pat_xxx
 GITHUB_MODEL=openai/gpt-4.1
 ```
 
-Variables optionnelles:
+Optional variables:
 
 ```text
 CAMERA_INDEX=0
@@ -50,12 +55,16 @@ GITHUB_MODELS_ENDPOINT=https://models.github.ai/inference/chat/completions
 GITHUB_MODELS_API_VERSION=2026-03-10
 ```
 
-Le token doit avoir l'autorisation `models:read`.
+The token must have the `models:read` permission.
 
-Au premier lancement, le modele MediaPipe officiel est telecharge dans
-`models/hand_landmarker.task`.
+On the first launch, the official MediaPipe model is downloaded to:
 
-## Source hand tracking
+```text
+models/hand_landmarker.task
+```
 
-La boucle de detection suit l'approche OpenCV + MediaPipe du projet:
+## Hand Tracking Source
+
+The hand detection loop follows the OpenCV + MediaPipe approach from this project:
+
 https://github.com/Sousannah/hand-tracking-using-mediapipe
